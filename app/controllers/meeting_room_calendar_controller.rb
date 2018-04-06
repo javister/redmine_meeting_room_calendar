@@ -193,10 +193,10 @@ class MeetingRoomCalendarController < ApplicationController
     meeting_end_date = Date.parse(meeting_end_day)
     project_id = params[:project_id].to_i
 
-    @calendar_issue = Issue.new
+    @calendar_issue = Issue.find(params[:event_id])
+    @calendar_issue.init_journal(User.current)
     @calendar_issue.project_id = project_id
     @calendar_issue.tracker_id = @tracker_id
-    @calendar_issue = Issue.find(params[:event_id])
     @calendar_issue.subject = params[:subject]
     @calendar_issue.assigned_to_id = params[:assigned_to_id]
     if @show_categories
@@ -205,14 +205,7 @@ class MeetingRoomCalendarController < ApplicationController
     @calendar_issue.start_date = meeting_date
     @calendar_issue.due_date = meeting_end_day
     @calendar_issue.custom_field_values = params[:custom_field_values]
-    orig_mail_notification = User.current.mail_notification
-    User.current.mail_notification = 'none'
-    User.current.save
-    User.current.reload
-    @calendar_issue.save!
-    User.current.mail_notification = orig_mail_notification
-    User.current.save
-    User.current.reload
+    @calendar_issue.save
   end
 
   def delete

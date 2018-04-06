@@ -720,7 +720,7 @@
       Description: validation to avaoid special characters in subject field
       */
       var validate = function() {
-          var special_char = /[0-9a-zA-Z',-]+/;
+          var special_char = /[0-9a-zA-Zа-яА-ЯёЁ',-]+/;
           if (special_char.test($('#subject').val())) {
               return true;
           }
