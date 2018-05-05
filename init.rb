@@ -1,5 +1,14 @@
 require 'redmine'
 
+ActionDispatch::Callbacks.to_prepare do
+  require_dependency 'project'
+  Project.send(:include, RedmineMeetingRoomCalendar::Patches::ProjectPatch)
+
+  require_dependency 'issues_helper'
+  IssuesHelper.send(:include, RedmineMeetingRoomCalendar::Patches::IssuesHelperPatch) unless IssuesHelper.included_modules.include?(RedmineMeetingRoomCalendar::Patches::IssuesHelperPatch)
+
+end
+
 Redmine::Plugin.register :redmine_meeting_room_calendar do
   name 'Redmine Meeting Room Calendar plugin'
   author 'QBurst, Tobias Droste'
@@ -8,8 +17,8 @@ Redmine::Plugin.register :redmine_meeting_room_calendar do
   version '3.0.0'
   requires_redmine :version_or_higher => '2.0.0'
 
-  permission :meeting_room_calendar, { :meeting_room_calendar => [:index] }, :public => true
-  menu :top_menu, :meeting_room_calendar, { :controller => 'meeting_room_calendar', :action => 'index' }, :caption => :label_name, :after => :help
+  permission :meeting_room_calendar, {:meeting_room_calendar => [:index]}, :public => true
+  menu :top_menu, :meeting_room_calendar, {:controller => 'meeting_room_calendar', :action => 'index'}, :caption => :label_name, :after => :help
 
   settings :default => {'project_id' => '0',
                         'project_ids' => [],
@@ -31,9 +40,5 @@ Redmine::Plugin.register :redmine_meeting_room_calendar do
            :partial => 'meeting_room_calendar/meeting_room_calendar_settings'
 end
 
-ActionDispatch::Callbacks.to_prepare do
-  require_dependency 'project'
-  Project.send(:include, RedmineMeetingRoomCalendar::Patches::ProjectPatch)
-end
-
 require 'redmine_meeting_room_calendar/hooks/view_projects_form_hook'
+
