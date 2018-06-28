@@ -52,3 +52,5 @@ en:
   label_setting_allow_overlap: "Allow booking overlap"
 
   field_project_meeting_rooms: "Meeting rooms (comma separated list)"
+
+  placeholder_meeting_subject_invitation: "Complete the subject"

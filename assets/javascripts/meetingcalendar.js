@@ -477,7 +477,7 @@
                   }
                   $('#meeting_date').val(date.format(long_date_format));
                   $('#meeting_end_date').val(date.format(long_date_format));
-                  $('#subject').val(user_last_name);
+                  $('#subject').val('');
                   $('#start_time').val('');
                   $('#end_time').val('');
                   $('input:checkbox').removeAttr('checked');

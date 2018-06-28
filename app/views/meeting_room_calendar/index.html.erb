@@ -115,14 +115,14 @@
 	        <%= label_tag("selected_meeting_room", l(:label_meeting_room)) %><%= select_tag "selected_meeting_room", options_for_select(@meeting_rooms) %><br/>
 	    </div>
         <% if @settings['allow_multiple_days'] == '1' %>
-            <%= label_tag(:subject, l(:label_subject)) %><%= text_field_tag :subject,@user_last_name,:maxlength => 255 %><br/>
+            <%= label_tag(:subject, l(:label_subject)) %><%= text_field_tag :subject,nil,{:maxlength => 255, :placeholder => l(:placeholder_meeting_subject_invitation)} %><br/>
             <%= label_tag("meeting_date", l(:label_meeting_date)) %><%= text_field_tag("meeting_date") %><br/>
 	        <%= label_tag("start_time", l(:label_start_time)) %><%= select_tag "start_time", options_for_select(@start_time) %><br/>
 	        <%= label_tag("meeting_end_date", l(:label_meeting_end_date)) %><%= text_field_tag("meeting_end_date") %><br/>
 	        <%= label_tag("end_time", l(:label_end_time)) %><%= select_tag "end_time", options_for_select(@end_time) %><br/>
         <% else %>
             <%= label_tag("meeting_date", l(:label_meeting_date)) %><%= text_field_tag("meeting_date") %><br/>
-            <%= label_tag(:subject, l(:label_subject)) %><%= text_field_tag :subject,@user_last_name,:maxlength => 255 %><br/>
+            <%= label_tag(:subject, l(:label_subject)) %><%= text_field_tag :subject,nil,{:maxlength => 255, :placeholder => l(:placeholder_meeting_subject_invitation)} %><br/>
 	        <%= label_tag("start_time", l(:label_start_time)) %><%= select_tag "start_time", options_for_select(@start_time) %><br/>
 	        <%= label_tag("end_time", l(:label_end_time)) %><%= select_tag "end_time", options_for_select(@end_time) %><br/>
         <% end %>
