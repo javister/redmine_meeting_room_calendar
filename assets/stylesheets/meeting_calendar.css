@@ -5,7 +5,7 @@
   z-index: 1000 !important;
 }
 
-.ui-widget-header{ background: none !important; background-color: #EA1D22 !important; color: white; border: none !important; }
+.ui-widget-header{ background: none !important; background-color: #628db6 !important; color: white; border: none !important; }
 
 .saveMeetingModal { display: none; }
 
@@ -70,11 +70,6 @@ br
     clear: left;
 }
 
-.fc-time-grid-event .fc-time
-{
-	background: #EA1D22;
-}
-
 .fc-time-grid-event .fc-title
 {
     color: #202020;
@@ -84,7 +79,7 @@ br
 {
     border-color: #202020;
     color: #202020; 
-    background: #E0E0E0 !important;
+    background: #E0E0E0;
     opacity: 1;
 }
 
@@ -101,45 +96,102 @@ br
 
 
 /************************************************************************************************************
-add the following for every category (<cid>=category id) where you want a different style:
-
-.fc-time-grid-event.category_<cid> .fc-time 
-{
-  background-color: #<color>;
-}
-************************************************************************************************************/
-
-.fc-time-grid-event.category_1 .fc-time 
-{
-    background-color: #EA1D22;
-}
-.fc-time-grid-event.category_2 .fc-time
-{
-    background-color: black;
-}
-.fc-time-grid-event.category_3 .fc-time
-{
-    background-color: green;
-}
-
-/************************************************************************************************************
 add the following for every meeting room (<roomnr>=index of the room in the select box) where you want a different style:
 
 .fc-time-grid-event.meeting_room_<roomnr> .fc-time
 {
   background-color: #<color>;
 }
+
 ************************************************************************************************************/
 
-.fc-time-grid-event.meeting_room_1 .fc-time
-{
-    background-color: #EA1D22;
+.fc-time-grid-event.meeting_room_1 .fc-bg {
+    background: #fbdeea;
 }
-.fc-time-grid-event.meeting_room_2 .fc-time
-{
-    background-color: black;
+.fc-time-grid-event.meeting_room_2 .fc-bg {
+    background: #f9b6d1;
 }
-.fc-time-grid-event.meeting_room_3 .fc-time
-{
-    background-color: green;
+.fc-time-grid-event.meeting_room_3 .fc-bg {
+    background: #a0d9da;
 }
+.fc-time-grid-event.meeting_room_4 .fc-bg {
+    background: #c8e8ea;
+}
+.fc-time-grid-event.meeting_room_5 .fc-bg {
+    background: #f7f0e6;
+}
+.fc-time-grid-event.meeting_room_6 .fc-bg {
+    background: #d5b3ce;
+}
+.fc-time-grid-event.meeting_room_7 .fc-bg {
+    background: #c9e3c3;
+}
+.fc-time-grid-event.meeting_room_8 .fc-bg {
+    background: #d5e593;
+}
+.fc-time-grid-event.meeting_room_9 .fc-bg {
+    background: #eb929b;
+}
+.fc-time-grid-event.meeting_room_10 .fc-bg {
+    background: #f3c8d8;
+}
+.fc-time-grid-event.meeting_room_11 .fc-bg {
+    background: #ccbbb4;
+}
+.fc-time-grid-event.meeting_room_12 .fc-bg {
+    background: #efdfdc;
+}
+.fc-time-grid-event.meeting_room_13 .fc-bg {
+    background: #f9f3e5;
+}
+.fc-time-grid-event.meeting_room_14 .fc-bg {
+    background: #dfdfe1;
+}
+.fc-time-grid-event.meeting_room_15 .fc-bg {
+    background: #c2cacd;
+}
+
+.fc-event {
+    border: none;
+}
+
+.fc-time-grid-event .fc-time {
+    background: transparent;
+    font-weight: bold;
+    color: #202020;
+}
+
+/************************************************************************************************************
+add the following for every category (<cid>=category id) where you want a different style:
+
+.fc-time-grid-event.category_<cid> .fc-time
+{
+  background-color: #<color>;
+}
+
+************************************************************************************************************/
+
+/*.fc-time-grid-event.category_141 .fc-time {*/
+/*    color: white;*/
+/*    background-color: #8046a5;*/
+/*}*/
+/*.fc-time-grid-event.category_142 .fc-time {*/
+/*    color: white;*/
+/*    background-color: #364a4c;*/
+/*}*/
+/*.fc-time-grid-event.category_143 .fc-time {*/
+/*    color: white;*/
+/*    background-color: #0084ff;*/
+/*}*/
+/*.fc-time-grid-event.category_144 .fc-time {*/
+/*    color: white;*/
+/*    background-color: #f23434;*/
+/*}*/
+/*.fc-time-grid-event.category_145 .fc-time {*/
+/*    color: white;*/
+/*    background-color: #e3780c;*/
+/*}*/
+/*.fc-time-grid-event.category_146 .fc-time {*/
+/*    color: white;*/
+/*    background-color: #6e0f3c;*/
+/*}*/
